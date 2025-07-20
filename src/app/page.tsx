@@ -53,12 +53,29 @@ export default function HomePage() {
               {works.map((work, index) => (
                 <Card key={work.title} delay={index * 0.1}>
                   <Link href={work.url} target="_blank" className="block group">
-                    <div className="p-6 h-full">
+                    <div className="p-6 h-full flex flex-col">
                       <h3 className="text-xl font-bold text-purple-400 mb-3 group-hover:text-purple-300 transition-colors">
                         {work.title}
                       </h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">{work.description}</p>
-                      <div className="flex justify-between items-center">
+                      <p className="text-gray-300 mb-4 leading-relaxed flex-1">{work.description}</p>
+
+                      {/* Technology Stack */}
+                      {work.technologies && (
+                        <div className="mb-4">
+                          <div className="flex flex-wrap gap-2">
+                            {work.technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-2 py-1 bg-purple-900/30 text-purple-300 rounded text-xs font-medium border border-purple-500/20 hover:bg-purple-900/50 transition-colors"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex justify-between items-center mt-auto">
                         <small className="text-gray-400 bg-gray-800 px-3 py-1 rounded-full">{work.year}</small>
                         <div className="w-6 h-6 text-purple-400 group-hover:translate-x-1 transition-transform">→</div>
                       </div>

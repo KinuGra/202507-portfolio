@@ -1,7 +1,7 @@
 export const experiences = [
     {
         company: "サンプル社名",
-        position: "サンプルデータエンジニア サンプルインターン",
+        position: "現在、Experienceは登録されていません",
         period: "2099年0月 - 2099年99月",
         description:
             "これはサンプルデータです",
