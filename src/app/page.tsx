@@ -9,6 +9,7 @@ import { Card } from "@/components/Card"
 import { Profile } from "@/components/Profile"
 import { JsonDisplay } from "@/components/JsonDisplay"
 import { AboutMe } from "@/components/AboutMe"
+import { ShowMoreSection } from "@/components/ShowMoreSection"
 import { Award, Building2, Calendar, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
@@ -49,7 +50,7 @@ export default function HomePage() {
           </Section>
 
           <Section title="Works" id="works">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ShowMoreSection initialCount={6} title="Works">
               {works.map((work, index) => (
                 <Card key={work.title} delay={index * 0.1}>
                   <Link href={work.url} target="_blank" className="block group">
@@ -83,12 +84,12 @@ export default function HomePage() {
                   </Link>
                 </Card>
               ))}
-            </div>
+            </ShowMoreSection>
           </Section>
 
           {/* Experience Section */}
           <Section title="Experience" id="experience">
-            <div className="max-w-4xl mx-auto">
+            <ShowMoreSection initialCount={6} title="Experience">
               {experiences.map((exp, index) => (
                 <Card key={exp.company} delay={index * 0.1}>
                   <div className="p-6">
@@ -120,12 +121,12 @@ export default function HomePage() {
                   </div>
                 </Card>
               ))}
-            </div>
+            </ShowMoreSection>
           </Section>
 
           {/* Certifications Section */}
           <Section title="Certifications & Achievements" id="certifications">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ShowMoreSection initialCount={6} title="Certifications">
               {certifications.map((cert, index) => (
                 <Card key={cert.name} delay={index * 0.1}>
                   <div className="p-6">
@@ -157,15 +158,17 @@ export default function HomePage() {
                   </div>
                 </Card>
               ))}
-            </div>
+            </ShowMoreSection>
           </Section>
 
           <Section title="Skills" id="skills">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ShowMoreSection initialCount={6} title="Skills">
               {skills.map((skill, index) => (
                 <Card key={skill.name} delay={index * 0.1}>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-green-400 mb-3">{skill.name}</h3>
+                    <div className="flex items-center gap-3 mb-3">
+                      <h3 className="text-xl font-bold text-green-400">{skill.name}</h3>
+                    </div>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <span className="text-sm text-gray-400">Level:</span>
@@ -176,11 +179,11 @@ export default function HomePage() {
                   </div>
                 </Card>
               ))}
-            </div>
+            </ShowMoreSection>
           </Section>
 
           <Section title="Articles" id="articles">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ShowMoreSection initialCount={6} title="Articles">
               {articles.map((article, index) => (
                 <Card key={article.url} delay={index * 0.1}>
                   <Link href={article.url} target="_blank" className="block group">
@@ -196,7 +199,7 @@ export default function HomePage() {
                   </Link>
                 </Card>
               ))}
-            </div>
+            </ShowMoreSection>
           </Section>
         </div>
       </main>
