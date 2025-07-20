@@ -1,11 +1,11 @@
 export const experiences = [
     {
-        company: "サンプル社名",
-        position: "現在、Experienceは登録されていません",
-        period: "2099年0月 - 2099年99月",
+        company: "null",
+        position: "null",
+        period: "null",
         description:
-            "これはサンプルデータです",
-        technologies: ["Hoge.js", "Hoge on Rails"],
+            "null",
+        technologies: ["null"],
     },
     // 以下モックデータ
     // {

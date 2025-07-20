@@ -14,7 +14,7 @@ export const works = [
         technologies: ["ハッカソン", "TypeScript", "Next.js", "PUSHER(WebSocket)"],
     },
     {
-        title: "現在、このポートフォリオは制作中であるため2つしかプロダクトを載せていません",
+        title: "3つ目以降のプロダクトはポートフォリオが制作中であるため載せていません",
         description: "",
         year: null,
         url: "null",
