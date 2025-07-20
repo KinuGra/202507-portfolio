@@ -57,6 +57,25 @@ export default function HomePage() {
           </div>
         </Section>
 
+        <Section title="Skills" id="skills">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <Card key={skill.name} delay={index * 0.1}>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-green-400 mb-3">{skill.name}</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-gray-400">Level:</span>
+                      <span className="bg-green-900/30 text-green-300 px-2 py-1 rounded text-sm">{skill.level}</span>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{skill.comment}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Section>
+
         <Section title="Articles" id="articles">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {articles.map((article, index) => (
@@ -72,25 +91,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </Link>
-              </Card>
-            ))}
-          </div>
-        </Section>
-
-        <Section title="Skills" id="skills">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <Card key={skill.name} delay={index * 0.1}>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-green-400 mb-3">{skill.name}</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-gray-400">Level:</span>
-                      <span className="bg-green-900/30 text-green-300 px-2 py-1 rounded text-sm">{skill.level}</span>
-                    </div>
-                    <p className="text-gray-300 leading-relaxed">{skill.comment}</p>
-                  </div>
-                </div>
               </Card>
             ))}
           </div>
