@@ -4,15 +4,27 @@ export const works = [
         description: "2人で交互に答える形式のクイズアプリです。僕はPM, 開発全般を担当しました。",
         year: "2025",
         url: "https://speed-turn-battle.vercel.app/",
-        technologies: ["チーム開発", "TypeScript", "React", "Next.js"],
+        technologies: ["TypeScript", "React", "Next.js"],
+        teamRole: {
+            title: "開発全般",
+            description:
+                "チーム開発のためのメンバーを自分で集め、私はPM, 開発全般を担当しました。",
+            teamSize: 4,
+        },
         github: "https://github.com/KinuGra/speed-turn-battle"
     },
     {
         title: "High5",
-        description: "High5は、複数人で参加できる「回答推測」型のアイスブレイクWebアプリです。\n僕はPM, Frontendを担当しました。",
+        description: "High5は、複数人で参加できる「回答推測」型のアイスブレイクWebアプリです。",
         year: "2025",
         url: "https://high5-drab.vercel.app/",
-        technologies: ["ハッカソン", "TypeScript", "Next.js", "PUSHER(WebSocket)"],
+        technologies: ["TypeScript", "Next.js", "PUSHER(WebSocket)"],
+        teamRole: {
+            title: "フロントエンド開発",
+            description:
+                "ドドド初心者を含む3人でハッカソンに出場し、私はPMとフロントエンドを担当しました。",
+            teamSize: 3,
+        },
         github: "https://github.com/KinuGra/high5",
         demo: "https://youtu.be/nsbTDwuzUsw",
     },
@@ -21,7 +33,12 @@ export const works = [
         description: "",
         year: "null",
         url: "null",
-        technologies: [""],
+        technologies: ["null"],
+        article: "null",
+        award: {
+            title: "Awardのサンプル",
+            description: "Sample",
+        },
     },
     // モックデータ
     // {
@@ -57,6 +74,12 @@ export const works = [
     //         title: "Innovation Prize",
     //         description: "AIハッカソンでイノベーション賞を受賞。自然な対話を実現する独自のプロンプト設計が評価された",
     //     },
+    //     teamRole: {
+    //         title: "フロントエンド開発・UI/UX設計",
+    //         description:
+    //             "3人チームでの開発。Reactを使用したチャットインターフェースの実装、レスポンシブデザインの適用、ユーザビリティテストの実施を担当。リアルタイム通信の実装とエラーハンドリングも担当した。",
+    //         teamSize: 3,
+    //     },
     //     github: "https://github.com/KinuGra/ai-chatbot",
     //     demo: "https://ai-chatbot-demo.vercel.app",
     //     article: "https://zenn.dev/kinugra/articles/ai-chatbot-development",
@@ -67,6 +90,12 @@ export const works = [
     //     year: "2023",
     //     url: "https://example.com",
     //     technologies: ["React", "Express.js", "PostgreSQL", "Stripe API"],
+    //     teamRole: {
+    //         title: "バックエンド開発・決済システム",
+    //         description:
+    //             "5人チームでの開発プロジェクト。Express.jsを使用したREST API設計・実装、PostgreSQLデータベース設計、Stripe決済システムの統合を担当。セキュリティ対策とパフォーマンス最適化も実施した。",
+    //         teamSize: 5,
+    //     },
     //     github: "https://github.com/KinuGra/ecommerce-platform",
     //     demo: "https://ecommerce-demo.herokuapp.com",
     // },
@@ -80,6 +109,12 @@ export const works = [
     //         title: "Student Game Award",
     //         description:
     //             "学生ゲーム開発コンテストで優秀賞を受賞。独創的なゲームメカニクスとポリッシュされたUI/UXが評価された",
+    //     },
+    //     teamRole: {
+    //         title: "ゲームプログラミング・システム設計",
+    //         description:
+    //             "4人チームでの開発。Unityでのゲームロジック実装、プレイヤーコントローラーの作成、敵AIの実装を担当。Firebaseを使用したスコアランキングシステムとGoogle Play Servicesの統合も担当した。",
+    //         teamSize: 4,
     //     },
     //     demo: "https://play.google.com/store/apps/details?id=com.kinugra.mobilegame",
     //     article: "https://qiita.com/kinugra/items/unity-mobile-game-development",
@@ -99,6 +134,12 @@ export const works = [
     //     year: "2023",
     //     url: "https://example.com",
     //     technologies: ["Vue.js", "Laravel", "MySQL", "Docker"],
+    //     teamRole: {
+    //         title: "フロントエンド開発・プロジェクト管理",
+    //         description:
+    //             "6人チームでの開発プロジェクト。Vue.jsを使用したSPAの実装、Vuexでの状態管理、リアルタイム通知機能の実装を担当。また、スクラムマスターとしてチーム全体の進捗管理とタスク調整も行った。",
+    //         teamSize: 6,
+    //     },
     //     github: "https://github.com/KinuGra/task-management",
     // },
     // {
@@ -116,6 +157,12 @@ export const works = [
     //     year: "2023",
     //     url: "https://example.com",
     //     technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
+    //     teamRole: {
+    //         title: "データ可視化・フロントエンド開発",
+    //         description:
+    //             "3人チームでの開発。D3.jsを使用したインタラクティブなグラフとチャートの実装、Reactでのダッシュボード画面の構築を担当。データの前処理とリアルタイム更新機能の実装も行った。",
+    //         teamSize: 3,
+    //     },
     //     github: "https://github.com/KinuGra/social-media-analytics",
     //     demo: "https://social-analytics-demo.netlify.app",
     // },

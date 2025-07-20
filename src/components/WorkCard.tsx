@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Github, ExternalLink, FileText, Trophy } from "lucide-react"
+import { Github, ExternalLink, FileText, Trophy, Users } from "lucide-react"
 import { useState } from "react"
 
 interface WorkCardProps {
@@ -15,6 +15,11 @@ interface WorkCardProps {
             title: string
             description: string
         }
+        teamRole?: {
+            title: string
+            description: string
+            teamSize: number
+        }
         github?: string
         demo?: string
         article?: string
@@ -24,6 +29,7 @@ interface WorkCardProps {
 
 export function WorkCard({ work, delay }: WorkCardProps) {
     const [showAwardDetails, setShowAwardDetails] = useState(false)
+    const [showTeamRoleDetails, setShowTeamRoleDetails] = useState(false)
 
     return (
         <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 group">
@@ -44,8 +50,26 @@ export function WorkCard({ work, delay }: WorkCardProps) {
                             {work.award.title}
                         </button>
                         {showAwardDetails && (
-                            <div className="bg-yellow-900/20 border border-yellow-500/20 rounded-lg p-3 text-sm text-yellow-100">
+                            <div className="bg-yellow-900/20 border border-yellow-500/20 rounded-lg p-3 text-sm text-yellow-100 mb-2">
                                 {work.award.description}
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Team Role Section */}
+                {work.teamRole && (
+                    <div className="mb-4">
+                        <button
+                            onClick={() => setShowTeamRoleDetails(!showTeamRoleDetails)}
+                            className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium mb-2"
+                        >
+                            <Users className="w-4 h-4" />
+                            チーム開発 ({work.teamRole.teamSize}人) - {work.teamRole.title}
+                        </button>
+                        {showTeamRoleDetails && (
+                            <div className="bg-cyan-900/20 border border-cyan-500/20 rounded-lg p-3 text-sm text-cyan-100 mb-2">
+                                {work.teamRole.description}
                             </div>
                         )}
                     </div>
