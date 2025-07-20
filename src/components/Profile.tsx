@@ -1,142 +1,47 @@
-import Link from "next/link";
-import {
-  Twitter,
-  Github,
-  BookOpen,
-  MessageCircle,
-} from "lucide-react";
+"use client"
+
+import { useState, useEffect } from "react"
 
 export function Profile() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
-    <section style={{ marginBottom: "3rem" }}>
-      <div style={styles.container}>
-        <img src="/icon.png" alt="アイコン" style={styles.avatar} />
-        <div style={styles.info}>
-          <h1 style={styles.name}>
-            Kinu <span style={styles.handle}>(@KinuGra)</span>
-          </h1>
-          <p><strong>所属</strong><br />大学生</p>
-          <p><strong>好きな技術</strong><br />Web系全般</p>
-          <p><strong>趣味</strong><br />ハッカソン / アニメ / ゲーム</p>
-          <p style={styles.credit}>
-            このページは <code>lucide-react</code> などのライブラリを用いて作成されています。
-          </p>
+    <div
+      className={`text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+    >
+      <div className="relative inline-block mb-8">
+        <div className="w-32 h-32 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full p-1 animate-pulse">
+          <div className="w-full h-full bg-gray-800 rounded-full flex items-center justify-center">
+            <span className="text-4xl font-bold text-white">K</span>
+          </div>
         </div>
+        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-400 rounded-full border-4 border-gray-900 animate-bounce"></div>
       </div>
 
-      <div style={styles.links}>
-        <Social
-          label="Twitter (X)"
-          account="@KinuGra"
-          href="https://twitter.com/KinuGra"
-          icon={<Twitter size={20} />}
-          bg="black"
-        />
-        <Social
-          label="Zenn"
-          account="@KinuGra"
-          href="https://zenn.dev/KinuGra"
-          icon={<BookOpen size={20} />}
-          bg="#3EA8FF"
-        />
-        <Social
-          label="GitHub"
-          account="@KinuGra"
-          href="https://github.com/KinuGra"
-          icon={<Github size={20} />}
-          bg="black"
-        />
-        <Social
-          label="Discord"
-          account="アカウント名"
-          href="https://discord.gg/your-discord-link"
-          icon={<MessageCircle size={20} />}
-          bg="#5865F2"
-        />
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
+        Kinu
+      </h1>
+
+      <p className="text-xl text-gray-300 mb-2">@KinuGra</p>
+      <p className="text-lg text-gray-400 mb-8">Student | Developer</p>
+
+      <div className="flex justify-center gap-4 flex-wrap">
+        {["Web"].map((skill, index) => (
+          <span
+            key={skill}
+            className={`px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm transition-all duration-500 hover:bg-purple-600/30 hover:scale-105 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: `${index * 0.1}s` }}
+          >
+            {skill}
+          </span>
+        ))}
       </div>
-    </section>
-  );
+    </div>
+  )
 }
-
-function Social({
-  label,
-  account,
-  href,
-  icon,
-  bg,
-}: {
-  label: string;
-  account: string;
-  href: string;
-  icon: React.ReactNode;
-  bg: string;
-}) {
-  return (
-    <Link href={href} target="_blank" style={{ ...styles.social(bg) }}>
-      <span style={styles.platform}>{label}</span>
-      <span>{account}</span>
-      <span style={styles.icon}>{icon}</span>
-    </Link>
-  );
-}
-
-const styles = {
-  container: {
-    display: "flex",
-    gap: "2rem",
-    alignItems: "flex-start",
-    flexWrap: "wrap",
-  },
-  avatar: {
-    width: "160px",
-    height: "160px",
-    borderRadius: "50%",
-    objectFit: "cover",
-  },
-  info: {
-    flex: 1,
-    minWidth: "260px",
-  },
-  name: {
-    fontSize: "2rem",
-    color: "#26c6da",
-    fontWeight: "bold",
-    marginBottom: "0.5rem",
-  },
-  handle: {
-    color: "#333",
-    fontSize: "1rem",
-    marginLeft: "0.5rem",
-  },
-  credit: {
-    fontSize: "0.8rem",
-    color: "#666",
-    marginTop: "0.5rem",
-  },
-  links: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-    gap: "1rem",
-    marginTop: "2rem",
-  },
-  social: (bg: string) => ({
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "0.75rem 1rem",
-    color: "white",
-    textDecoration: "none",
-    borderRadius: "0.5rem",
-    fontWeight: "bold",
-    backgroundColor: bg,
-  }),
-  platform: {
-    fontSize: "0.85rem",
-    opacity: 0.85,
-  },
-  icon: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-};

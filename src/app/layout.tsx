@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from '@/components/Header'
 
 export const metadata: Metadata = {
   title: "Kinu Portfolio",
@@ -15,7 +14,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header />
         <main>{children}</main>
       </body>
     </html>
