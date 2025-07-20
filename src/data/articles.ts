@@ -1,8 +1,8 @@
 export const articles = [
     {
-        title: "記事のタイトル",
+        title: "現在、記事は登録されていません",
         url: "",
-        site: "note.com",
+        site: "note",
         date: "2099-99-99",
     },
 ];
