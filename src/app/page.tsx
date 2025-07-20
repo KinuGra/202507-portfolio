@@ -1,10 +1,14 @@
 import { works } from "@/data/works"
 import { articles } from "@/data/articles"
 import { skills } from "@/data/skills"
+import { certifications } from "@/data/certifications"
+import { experiences } from "@/data/experiences"
 import { Section } from "@/components/Section"
 import { Card } from "@/components/Card"
 import { Profile } from "@/components/Profile"
 import { JsonDisplay } from "@/components/JsonDisplay"
+import { AboutMe } from "@/components/AboutMe"
+import { Award, Building2, Calendar, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
@@ -36,6 +40,11 @@ export default function HomePage() {
 
       {/* Content Sections */}
       <div className="container mx-auto px-4 py-16 space-y-20">
+        {/* About Me Section */}
+        <Section title="About Me" id="about">
+          <AboutMe />
+        </Section>
+
         <Section title="Works" id="works">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {works.map((work, index) => (
@@ -52,6 +61,80 @@ export default function HomePage() {
                     </div>
                   </div>
                 </Link>
+              </Card>
+            ))}
+          </div>
+        </Section>
+
+        {/* Experience Section */}
+        <Section title="Experience" id="experience">
+          <div className="max-w-4xl mx-auto">
+            {experiences.map((exp, index) => (
+              <Card key={exp.company} delay={index * 0.1}>
+                <div className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Building2 className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                        <h3 className="text-xl font-bold text-blue-400">{exp.position}</h3>
+                        <div className="flex items-center gap-2 text-sm text-gray-400">
+                          <Calendar className="w-4 h-4" />
+                          <span>{exp.period}</span>
+                        </div>
+                      </div>
+                      <p className="text-lg text-gray-300 mb-3">{exp.company}</p>
+                      <p className="text-gray-300 leading-relaxed mb-4">{exp.description}</p>
+                      {exp.technologies && (
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech) => (
+                            <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Section>
+
+        {/* Certifications Section */}
+        <Section title="Certifications & Achievements" id="certifications">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {certifications.map((cert, index) => (
+              <Card key={cert.name} delay={index * 0.1}>
+                <div className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Award className="w-6 h-6 text-yellow-400" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-yellow-400 mb-2">{cert.name}</h3>
+                      <p className="text-gray-300 mb-2">{cert.issuer}</p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-sm text-gray-400">
+                          <Calendar className="w-4 h-4" />
+                          <span>{cert.date}</span>
+                        </div>
+                        {cert.credentialUrl && (
+                          <Link
+                            href={cert.credentialUrl}
+                            target="_blank"
+                            className="flex items-center gap-1 text-yellow-400 hover:text-yellow-300 transition-colors text-sm"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            証明書
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>

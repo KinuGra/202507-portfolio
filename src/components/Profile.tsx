@@ -30,7 +30,7 @@ export function Profile() {
       <p className="text-lg text-gray-400 mb-8">Student | Developer</p>
 
       <div className="flex justify-center gap-4 flex-wrap">
-        {["Web"].map((skill, index) => (
+        {["Web", "ゲーム", "Bot"].map((skill, index) => (
           <span
             key={skill}
             className={`px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm transition-all duration-500 hover:bg-purple-600/30 hover:scale-105 ${
