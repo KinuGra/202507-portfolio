@@ -1,0 +1,14 @@
+.header {
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  background-color: var(--gray);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
