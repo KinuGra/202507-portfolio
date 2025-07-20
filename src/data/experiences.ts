@@ -1,7 +1,7 @@
 export const experiences = [
     {
-        company: "Hoge hoge.",
-        position: "hogehogeエンジニア インターン",
+        company: "サンプル社名",
+        position: "サンプルデータエンジニア サンプルインターン",
         period: "2099年0月 - 2099年99月",
         description:
             "これはサンプルデータです",

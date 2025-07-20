@@ -35,7 +35,7 @@ export function Section({ title, id, children }: SectionProps) {
         <section
             ref={sectionRef}
             id={id}
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`scroll-mt-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
